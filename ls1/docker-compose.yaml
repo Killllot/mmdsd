@@ -51,6 +51,18 @@ services:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "Kirill"
 
+  pgAdmin:
+    container_name: pgAdmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+
   zookeeper:
     image: zookeeper:3.7.0
     container_name: zookeeper
@@ -92,3 +104,14 @@ services:
     depends_on:
       - kafka
       - zookeeper
+
+  application:
+    image: mmdsd-app-1:v2
+    restart: no
+    environment:
+      USER_NAME: "World"
+      SERVER_HOST: "postgres"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
