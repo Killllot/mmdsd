@@ -12,6 +12,9 @@ public class Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
+		if (args.length > 0){
+			System.out.println("Hello " + args[0] + "!");
+		}
 	}
 
 	@GetMapping("say")
