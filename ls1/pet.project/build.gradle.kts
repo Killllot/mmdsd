@@ -23,16 +23,17 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
+	implementation("org.postgresql:postgresql:42.6.0")
+	implementation("org.springframework.data:spring-data-jpa:3.1.3")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.mapstruct:mapstruct:1.5.5.Final")
+	testImplementation("org.projectlombok:lombok:1.18.28")
+	annotationProcessor ("org.mapstruct:mapstruct-processor:1.5.5.Final")
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	// https://mvnrepository.com/artifact/org.postgresql/postgresql
-	implementation("org.postgresql:postgresql:42.6.0")
-	implementation("org.springframework.data:spring-data-jpa:3.1.3")
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-rest
-	implementation("org.springframework.boot:spring-boot-starter-data-rest:3.1.3")
 }
 
 tasks.withType<Test> {

@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RestController
 public class Application {
 
 	public static void main(String[] args) {
@@ -15,11 +14,6 @@ public class Application {
 		if (args.length > 0){
 			System.out.println("Hello " + args[0] + "!");
 		}
-	}
-
-	@GetMapping("say")
-	public String sayMessage(@RequestParam String name){
-		return "Hello, " + name + ", i'm a Java project! ";
 	}
 
 }

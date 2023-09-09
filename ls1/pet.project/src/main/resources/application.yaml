@@ -1,4 +1,7 @@
 spring:
+  # swagger-ui custom path
+  swagger-ui:
+    path=/swagger-ui.html
   application:
     name: "my-service-app"
   datasource:
