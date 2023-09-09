@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: "my-service-app"
+  datasource:
+    url: jdbc:postgresql://${SERVER_HOST:localhost}:5432/postgres
+    username: postgres
+    password: Kirill
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  devtools:
+    restart:
+      enabled: true

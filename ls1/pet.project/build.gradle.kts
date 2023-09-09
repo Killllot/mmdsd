@@ -27,6 +27,12 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	// https://mvnrepository.com/artifact/org.postgresql/postgresql
+	implementation("org.postgresql:postgresql:42.6.0")
+	implementation("org.springframework.data:spring-data-jpa:3.1.3")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-rest
+	implementation("org.springframework.boot:spring-boot-starter-data-rest:3.1.3")
 }
 
 tasks.withType<Test> {
