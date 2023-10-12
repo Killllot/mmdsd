@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pet
+  labels:
+    app: pet
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: pet-server
+  template:
+    metadata:
+      labels:
+        app: pet-server
+    spec:
+      containers:
+        - name: pet-application
+          image: killot/mmdsd-app-1:v4
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SERVER_HOST
+              value: 192.168.0.226

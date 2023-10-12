@@ -105,6 +105,19 @@ services:
       - kafka
       - zookeeper
 
+  kafka-ui:
+    container_name: kafka-ui
+    image: provectuslabs/kafka-ui:latest
+    networks:
+      - kafka-net
+    depends_on:
+      - kafka
+      - zookeeper
+    ports:
+      - 8082:8080
+    environment:
+      DYNAMIC_CONFIG_ENABLED: true
+
   application:
     image: mmdsd-app-1:v2
     restart: no

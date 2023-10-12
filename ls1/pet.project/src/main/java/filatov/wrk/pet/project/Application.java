@@ -2,10 +2,13 @@ package filatov.wrk.pet.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.kafka.annotation.EnableKafka;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@EnableKafka
 @SpringBootApplication
 public class Application {
 
@@ -16,4 +19,8 @@ public class Application {
 		}
 	}
 
+	@KafkaListener(topics="msg", groupId = "app")
+	public void msgListener(String msg){
+		System.out.println("Сообщение: " + msg + " обработано");
+	}
 }

@@ -9,9 +9,12 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -27,5 +30,15 @@ public class TestController {
     @Transactional
     public TestEntity saveTest(@RequestBody TestDto testDto){
         return testRepository.save(testMapper.toEntity(testDto));
+    }
+
+    @GetMapping("say")
+    public String say(){
+        return "Hello!";
+    }
+
+    @GetMapping("getAll")
+    public List<TestDto> getAll(){
+        return testRepository.findAll().stream().map(item -> testMapper.toDto(item)).toList();
     }
 }

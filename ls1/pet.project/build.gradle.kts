@@ -28,6 +28,8 @@ dependencies {
 	implementation("org.springframework.data:spring-data-jpa:3.1.3")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.mapstruct:mapstruct:1.5.5.Final")
+	// https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka
+	implementation("org.springframework.kafka:spring-kafka:3.0.10")
 	testImplementation("org.projectlombok:lombok:1.18.28")
 	annotationProcessor ("org.mapstruct:mapstruct-processor:1.5.5.Final")
 	compileOnly("org.projectlombok:lombok")
