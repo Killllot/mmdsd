@@ -15,6 +15,7 @@ public class MsgController {
 
     @PostMapping
     public void sendOrder(String msgId, String msg){
+        System.out.println("Сообщение :" + msgId + " " + msg);
         kafkaTemplate.send("msg", msgId, msg);
     }
 }

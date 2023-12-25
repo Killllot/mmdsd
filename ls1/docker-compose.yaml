@@ -119,7 +119,7 @@ services:
       DYNAMIC_CONFIG_ENABLED: true
 
   application:
-    image: mmdsd-app-1:v2
+    image: killot/mmdsd-app-1:v4
     restart: no
     environment:
       USER_NAME: "World"
